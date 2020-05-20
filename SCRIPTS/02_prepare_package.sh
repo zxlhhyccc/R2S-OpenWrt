@@ -17,6 +17,7 @@ wget -P package/lean/autocore/files https://raw.githubusercontent.com/QiuSimons/
 rm -rf ./package/lean/autocore/files/rpcd_10_system.js
 wget -P package/lean/autocore/files https://raw.githubusercontent.com/QiuSimons/Others/master/rpcd_10_system.js
 svn co https://github.com/project-openwrt/openwrt/branches/openwrt-19.07/package/lean/coremark package/lean/coremark
+sed -i 's,-DMULTIT,-Ofast -DMULTIT,g' package/lean/coremark/Makefile
 #R2S刷机
 svn co https://github.com/songchenwen/nanopi-r2s/trunk/luci-app-r2sflasher package/new/luci-app-r2sflasher
 sed -i 's/"luci.fs"/"luci.sys".net/g' package/new/luci-app-r2sflasher/luasrc/model/cbi/r2sflasher/flash.lua
@@ -43,8 +44,9 @@ sed -i 's/0/1/g' feeds/packages/utils/irqbalance/files/irqbalance.config
 #AdGuard
 # git clone -b master --single-branch https://github.com/rufengsuixing/luci-app-adguardhome package/new/luci-app-adguardhome
 #SSRP
-# svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/lean/luci-app-ssr-plus
+#svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/lean/luci-app-ssr-plus
 #svn co https://github.com/QiuSimons/helloworld/trunk/luci-app-ssr-plus package/lean/luci-app-ssr-plus
+# svn co https://github.com/QiuSimons/helloworld/trunk/luci-app-ssr-plus-177-1 package/lean/luci-app-ssr-plus
 # rm -rf ./package/lean/luci-app-ssr-plus/luasrc/view/shadowsocksr/ssrurl.htm
 # wget -P package/lean/luci-app-ssr-plus/luasrc/view/shadowsocksr https://raw.githubusercontent.com/QiuSimons/Others/master/luci-app-ssr-plus/luasrc/view/shadowsocksr/ssrurl.htm
 #SSRP依赖
@@ -79,7 +81,7 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-wrtbwmon
 #流量监管
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-netdata package/lean/luci-app-netdata
 #OpenClash
-# svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/new/luci-app-openclash
+# svn co https://github.com/vernesong/OpenClash/branches/master/luci-app-openclash package/new/luci-app-openclash
 #SeverChan
 # git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan package/new/luci-app-serverchan
 # svn co https://github.com/openwrt/openwrt/branches/openwrt-19.07/package/network/utils/iputils package/network/utils/iputils
