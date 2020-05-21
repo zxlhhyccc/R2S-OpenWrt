@@ -21,6 +21,9 @@ sed -i 's,-DMULTIT,-Ofast -DMULTIT,g' package/lean/coremark/Makefile
 #R2S刷机
 svn co https://github.com/songchenwen/nanopi-r2s/trunk/luci-app-r2sflasher package/new/luci-app-r2sflasher
 sed -i 's/"luci.fs"/"luci.sys".net/g' package/new/luci-app-r2sflasher/luasrc/model/cbi/r2sflasher/flash.lua
+#登录保护
+git clone -b master --single-branch https://github.com/NateLol/luci-app-beardropper package/new/luci-app-beardropper
+sed -i 's/"luci.fs"/"luci.sys".net/g' package/new/luci-app-beardropper/luasrc/model/cbi/bearDropper/setting.lua
 #迅雷快鸟
 # svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-xlnetacc package/lean/luci-app-xlnetacc
 #DDNS
@@ -45,8 +48,8 @@ sed -i 's/0/1/g' feeds/packages/utils/irqbalance/files/irqbalance.config
 # git clone -b master --single-branch https://github.com/rufengsuixing/luci-app-adguardhome package/new/luci-app-adguardhome
 #SSRP
 #svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/lean/luci-app-ssr-plus
-#svn co https://github.com/QiuSimons/helloworld/trunk/luci-app-ssr-plus package/lean/luci-app-ssr-plus
-# svn co https://github.com/QiuSimons/Others/trunk/luci-app-ssr-plus-177-1 package/lean/luci-app-ssr-plus
+#svn co https://github.com/QiuSimons/Others/trunk/luci-app-ssr-plus-177-1 package/lean/luci-app-ssr-plus
+# svn co https://github.com/QiuSimons/Others/trunk/luci-app-ssr-plus package/lean/luci-app-ssr-plus
 # rm -rf ./package/lean/luci-app-ssr-plus/luasrc/view/shadowsocksr/ssrurl.htm
 # wget -P package/lean/luci-app-ssr-plus/luasrc/view/shadowsocksr https://raw.githubusercontent.com/QiuSimons/Others/master/luci-app-ssr-plus/luasrc/view/shadowsocksr/ssrurl.htm
 #SSRP依赖
