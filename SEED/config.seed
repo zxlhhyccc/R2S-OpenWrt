@@ -108,7 +108,7 @@ CONFIG_PACKAGE_luci-proto-ppp=y
 CONFIG_PACKAGE_luci-theme-bootstrap=y
 # CONFIG_PACKAGE_luci-theme-material is not set
 CONFIG_PACKAGE_openssl-util=y
-CONFIG_PACKAGE_pandownload-fake-server=y
+# CONFIG_PACKAGE_pandownload-fake-server is not set
 CONFIG_PACKAGE_rpcd=y
 CONFIG_PACKAGE_rpcd-mod-file=y
 CONFIG_PACKAGE_rpcd-mod-iwinfo=y
@@ -121,5 +121,9 @@ CONFIG_PACKAGE_curl=y
 CONFIG_PACKAGE_jq=y
 CONFIG_PACKAGE_smartdns=y
 CONFIG_PACKAGE_shadowsocksr-libev-server=y
+CONFIG_PACKAGE_libcares=y
+CONFIG_PACKAGE_libev=y
+CONFIG_PACKAGE_libsodium=y
+CONFIG_PACKAGE_shadowsocks=y
 # CONFIG_COLLECT_KERNEL_DEBUG is not set
 # CONFIG_OPENSSL_WITH_ERROR_MESSAGES is not set
