@@ -1,0 +1,22 @@
+diff --git a/block.c b/block.c
+index 569bf56..b88e208 100644
+--- a/block.c
++++ b/block.c
+@@ -747,7 +747,7 @@ static void check_filesystem(struct probe_info *pr)
+        pid = fork();
+        if (!pid) {
+                if(!strncmp(pr->type, "f2fs", 4)) {
+-                       execl(ckfs, ckfs, "-f", pr->dev, NULL);
++                       execl(ckfs, ckfs, "-p", "2", "-f", pr->dev, NULL);
+                        exit(EXIT_FAILURE);
+                } else if(!strncmp(pr->type, "btrfs", 5)) {
+                        execl(ckfs, ckfs, "--repair", pr->dev, NULL);
+@@ -1591,7 +1591,7 @@ static int main_extroot(int argc, char **argv)
+ #endif
+ 
+        /* As a last resort look for /etc/config/fstab on "rootfs" partition */
+-       return mount_extroot(NULL);
++       return mount_extroot("/tmp/overlay");
+ }
+ 
+ static int main_mount(int argc, char **argv)
